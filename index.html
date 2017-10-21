@@ -3,11 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <title>Currency converter</title>
+    <script charset="utf-8" src="script.js"></script>
+
   </head>
   <body>
+    <h1>Welcome to my currency converter</h1>
+<form method="post" accept-charset="utf-8">
+
 <?php
-    include($_SERVER['DOCUMENT_ROOT']."/index.php");
+    include($_SERVER['DOCUMENT_ROOT']."/form.php");
+?>
+  <p>Please Choose your provider</p>
+
+  <select id="provider" name="provider">
+    <option type="submit" value="ECB">ECB</option>
+    <option type="submit" value="Fixer">Fixer</option>
+  </select>
+
+  <p>Please enter the amount to convert</p>
+
+  <input type="number" name="amount" id="amount" value="1" />
+  <input type="submit" name="go" id="go" value="GO!"/>
+  <!-- <input disabled type="text" name="result" id="result" value="result" /> -->
+</form>
+<?php
+    include($_SERVER['DOCUMENT_ROOT']."/calculation.php");
 ?>
   </body>
 </html>
