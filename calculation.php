@@ -23,8 +23,19 @@ foreach ($provider as $key => $value) {
     // echo($rateToTarget);
   }
 }
-$answer = ($amount /$rateToEuro) * $rateToTarget;
+if($amount < 0){
+  echo("<p>Please enter a positive number</p>");
+
+}
+elseif($amount == 0){
+
+  echo("<p></p>");
+}
+else{
+  $answer = ($amount /$rateToEuro) * $rateToTarget;
+  echo("<p>".$answer."</p>");
+
+}
 
 
-echo($answer);
 ?>
